@@ -2,6 +2,7 @@ use dioxus::prelude::*;
 
 mod editor;
 mod preview;
+mod state;
 
 use editor::Editor;
 use preview::Preview;
@@ -12,12 +13,18 @@ pub fn App(cx: Scope) -> Element {
         div {
           class: "h-screen flex flex-col",
           nav {
-            class: "border-b-2 border-gray-100 py-3 px-4 font-semibold",
+            class: "border-b-2 border-gray-100 py-3 px-4 flex",
             h1 {
                Link {
+                 class: "font-semibold",
                  to: "/",
                 "Hello Dioxus"
                }
+            }
+            a {
+              class: "ml-auto",
+              href: "https://github.com/tnantoka/hello-dioxus",
+              "GitHub"
             }
           }
           div {
