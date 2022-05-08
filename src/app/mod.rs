@@ -1,5 +1,11 @@
 use dioxus::prelude::*;
 
+mod editor;
+mod preview;
+
+use editor::Editor;
+use preview::Preview;
+
 #[allow(non_snake_case)]
 pub fn App(cx: Scope) -> Element {
     cx.render(rsx! {
@@ -18,16 +24,11 @@ pub fn App(cx: Scope) -> Element {
             class: "py-3 px-4 flex flex-1",
             div {
               class: "flex-1 pr-2",
-              textarea {
-                class: "border border-gray-300 bg-gray-100 w-full h-full",
-              }
+              Editor {}
             }
             div {
               class: "flex-1 pl-2",
-              div {
-                class: "border border-gray-300 w-full h-full",
-                "Preview"
-              }
+              Preview {}
             }
           }
         }
